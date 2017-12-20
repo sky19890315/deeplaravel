@@ -61,6 +61,25 @@
                             </div>
                         </div>
 
+                        <div class="form-group {{  $errors->has('captcha') ? 'has-error': ''  }}">
+                            <label for="captcha" class="col-md-4 control-label">验证码</label>
+
+                            <div class="col-md-6">
+                                <input type="text" id="captcha" class="form-control" name="captcha">
+                                <img src="{{  captcha_src('flat')  }}"
+                                     class="thumbnail captcha" onclick="this.src='/captcha/flat?'+Math.random()"
+                                     title="点击图片重新获取验证码">
+                            </div>
+                            @if($errors->has('captcha'))
+                                <span>
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('captcha')  }}</strong>
+                                    </span>
+                                </span>
+                            @endif
+
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
