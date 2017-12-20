@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/helpers.php';// self define
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
